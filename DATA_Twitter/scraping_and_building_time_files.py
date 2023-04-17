@@ -9,8 +9,9 @@ import os.path
 
 # Requests Array
 requestsArray = ["PetOfTheDay" , "Steam", "Wind", "Ryzen 5", "xkcd"]
-number_of_tweets = 100;
+number_of_tweets = 100
 payload={}
+token = ""
 
 def path():
   date = datetime.date(datetime.now())
@@ -31,7 +32,7 @@ for s in requestsArray:
   url = "https://api.twitter.com/2/tweets/search/recent?query=has:media {}&tweet.fields=created_at&max_results={}".format(s, number_of_tweets)
 
   headers = {
-    'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAGjLJgEAAAAAhBTLNkvhKn7eSjbs4EVtfvK06A8%3DS8wLFegQCNxlJa8qKPErR47vgRYG5EoNYijCVIgPaAdCR8HOiN',
+    'Authorization': f'Bearer {token}',
     'Cookie': 'personalization_id="v1_Ny8MxnTAyJ8F6Wnq+QBBiA=="; guest_id=v1%3A160533624325732650'
   }
 
